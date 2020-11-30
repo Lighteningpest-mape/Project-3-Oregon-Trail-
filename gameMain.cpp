@@ -97,12 +97,24 @@ int main()
 
     Game playerGame(startDay, startMonth, endDay, endMonth, temp_partyNames, tripLength);
 
+    randNum = 10;
+
     while(playerGame.getPartyNames().getNumPartyMembers() != 0)
     {
-        randNum = 1 + (rand() % 10);
-
         playerGame.randEvent(randNum);
+        if(playerGame.getTripLength().checkMilestoneDistance() < 70 && playerGame.getTripLength().checkNearestMilestone() == || playerGame.getTripLength().checkNearestMilestone() ==  || playerGame.getTripLength().checkNearestMilestone() == )
+        {
+            cout << "Would you like to visit the outpost?\n(1.) Yes; (2.) No: ";
+            cin >> userInput;
+            if(userInput == 1)
+            {
+                
+            }
+
+        }
         playerGame.turnMenu();
+
+        randNum = 1 + (rand() % 10);
     }
 
 }
