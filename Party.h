@@ -18,7 +18,7 @@ class Party
     void setNumPartyMembers(int);
 
     //other
-    void removeMember();
+    void removeMember(int);
 
     private:
     string partyNames[5];
