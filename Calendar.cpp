@@ -68,3 +68,18 @@ int Calender::monthCheck()
     }
     return days;
 }
+
+void Calender::timeAdvance(int numDaysAdvanced)
+{
+    if(numDaysAdvanced + initDay > monthCheck())
+    {
+        //If a month passes, advance the month and reasses the day
+        initDay = numDaysAdvanced - (monthCheck() - initDay);
+        initMonth++;
+    }
+    else
+    {
+        //Else just add the days advanced to the current day
+        initDay = numDaysAdvanced + initDay;
+    }
+}
