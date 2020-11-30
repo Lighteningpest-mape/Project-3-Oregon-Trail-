@@ -22,8 +22,9 @@ class Travel
     void setTotalLength(int);
 
     //other functions
-    void getAllMilestones(string);
+    bool getAllMilestones(string);
     int checkMilestoneDistance();
+    int checkNearestMilestone();
 
     private:
     Milestone allMilestones[];

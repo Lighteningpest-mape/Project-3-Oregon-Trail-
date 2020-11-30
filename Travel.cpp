@@ -46,12 +46,50 @@ void Travel::setTotalLength(int inc_length)
     totalMiles = inc_length;
 }
 
-void Travel::getAllMilestones(string inc_file)
+//this function reads from an external file and puts each milestone name + milage into the appropriate place in the array
+bool Travel::getAllMilestones(string inc_file)
 {
-   //this function will read from an external file and put each milestone name + milage into the appropriate place in the array
+    ifstream inFile;
+    string currentLine;
+    bool fileLoad = false;
+    int i = 0;
+    inFile.open(inc_file);
+
+    if(inFile.is_open())
+    {
+        while(getline(inFile, currentLine))
+        {
+            if(i % 2 == 0)
+            {
+                allMilestones[i].setCurrentMilestone(currentLine);
+            }
+            else
+            {
+                allMilestones[i-1].setMilestoneMiles(stoi(currentLine));
+            }
+
+            i++;
+        }
+        fileLoad = true;
+    }
+    
+    return fileLoad;
 }
 
+//this function will check the distance to the next milestone and return the difference between the 2
 int Travel::checkMilestoneDistance()
 {
-    //this function will check the distance to the next milestone and return the difference between the 2
+    return milesTraveled - allMilestones[checkNearestMilestone()].getMilestoneMiles();
+}
+
+//returns the position (in the array) of the closest milestone ahead of the player
+int Travel::checkNearestMilestone()
+{
+    int i = 0;
+    while(milesTraveled - allMilestones[i].getMilestoneMiles() > 0)
+    {
+        i++;
+    }
+
+    return i;
 }
