@@ -9,21 +9,22 @@ using namespace std;
 Party::Party()
 {
     //The best Oregon trail party contains the best TMNT character and the four turtles
-    partyInv = Inventory();
     partyNames[0] = "Leo";
     partyNames[1] = "Ralph";
     partyNames[2] = "Donnie";
     partyNames[3] = "Mikey";
     partyNames[4] = "April";
+    numPartyMembers = 5;
+
 }
-Party::Party(int food, int bullets, double money, int ox, int parts, int speed, string oneName, string twoName, string threeName, string fourName, string fiveName)
+Party::Party(string oneName, string twoName, string threeName, string fourName, string fiveName)
 {
-    partyInv = Inventory(food, bullets, money, ox, parts, speed);
     partyNames[0] = oneName;
     partyNames[1] = twoName;
     partyNames[2] = threeName;
     partyNames[3] = fourName;
     partyNames[4] = fiveName;
+    numPartyMembers = 5;
 }
 
 //getters
@@ -43,4 +44,19 @@ void Party::setMemberName(string newName, int partyPos)
     //Primarily for trans members
     //Joke ^^
     partyNames[partyPos] = newName;
+}
+
+int Party::getNumPartyMembers() const
+{
+    return numPartyMembers;
+}
+
+void Party::setNumPartyMembers(int inc_numPartyMembers)
+{
+    numPartyMembers = inc_numPartyMembers;
+}
+
+void Party::removeMember()
+{
+    numPartyMembers--;
 }
