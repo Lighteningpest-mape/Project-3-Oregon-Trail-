@@ -24,10 +24,20 @@ void Game::shopAction(double inc_multiplier)
 
 void Game::travelAction()
 {
-    int travelMiles = 70 + (rand() % 70);
-    tripLength.setMilesTraveled(tripLength.getMilesTraveled() + travelMiles);
-    partyInventory.setFood(partyInventory.getFood() - (14 * partyNames.getNumPartyMembers() * 3));
-    tripTime.timeAdvance(14);
+    if(partyInventory.getOxen() != 0)
+    {
+        int travelMiles = 70 + (rand() % 70);
+        tripLength.setMilesTraveled(tripLength.getMilesTraveled() + travelMiles);
+        partyInventory.setFood(partyInventory.getFood() - (14 * partyNames.getNumPartyMembers() * 3));
+        tripTime.timeAdvance(14);
+    }
+    else
+    {
+        int travelMiles = 35 + (rand() % 35);
+        tripLength.setMilesTraveled(tripLength.getMilesTraveled() + travelMiles);
+        partyInventory.setFood(partyInventory.getFood() - (14 * partyNames.getNumPartyMembers() * 3));
+        tripTime.timeAdvance(14);
+    }
 }
 
 void Game::huntingAction()
@@ -88,12 +98,23 @@ void Game::randEvent(int randNum)
     {
         //good events
         case 1:
+
         case 2:
         case 3:
 
         //bad events
         //ox dies
         case 4:
+        if(partyInventory.getOxen() != 0)
+        {
+            cout << "One of your oxen has died!" << endl;
+            partyInventory.setOxen(partyInventory.getOxen() - 1);
+            if(partyInventory.getOxen() == 0)
+            {
+                cout << "With no oxen, you are forced to travel on foot." << endl;
+            }
+        }
+
         //wagon breaks down
         case 5:
         //someone gets sick
@@ -126,4 +147,9 @@ void Game::turnMenu()
     {
 
     }
+}
+
+Party Game::getPartyNames()
+{
+    return partyNames;
 }

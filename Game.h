@@ -19,6 +19,11 @@ class Game
 
     //game needs start date, end date, party names, trip length, and initialized inventory of 0
 
+    Travel getTripLength();
+    Party getPartyNames();
+    Inventory getPartyInventory();
+    Calender getTripTime();
+
     //int here is for price going up as later shops are encountered
     void shopAction(double);
     void travelAction();
