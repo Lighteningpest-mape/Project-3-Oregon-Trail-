@@ -16,9 +16,9 @@ Party::Party()
     partyNames[3] = "Mikey";
     partyNames[4] = "April";
 }
-Party::Party(string oneName, string twoName, string threeName, string fourName, string fiveName)
+Party::Party(int food, int bullets, double money, int ox, int parts, int speed, string oneName, string twoName, string threeName, string fourName, string fiveName)
 {
-    partyInv = Inventory();
+    partyInv = Inventory(food, bullets, money, ox, parts, speed);
     partyNames[0] = oneName;
     partyNames[1] = twoName;
     partyNames[2] = threeName;

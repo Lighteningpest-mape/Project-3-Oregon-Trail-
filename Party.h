@@ -6,7 +6,7 @@ class Party
 {
     public:
     Party();
-    Party(string, string, string, string, string);
+    Party(int, int, double, int, int, int, string, string, string, string, string);
 
     //getters
     string getLeaderName() const;
