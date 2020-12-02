@@ -11,11 +11,12 @@ class Travel
 {
     public:
     Travel();
-    Travel(Milestone [], int, int, int, int);
+    Travel(Milestone[32], int, int, int, int);
 
     //getter
     int getMilesTraveled() const;
     int getTripLength() const;
+    Milestone getMilestone(int);
 
     //setter
     void setMilesTraveled(int);

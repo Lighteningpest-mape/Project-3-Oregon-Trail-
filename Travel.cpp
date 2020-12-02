@@ -12,13 +12,14 @@ Travel::Travel()
     milesTraveled = 0;
     totalMiles = 0;
     currentMilestone = 0;
+    allMilestones;
 }
 
-Travel::Travel(Milestone inc_MS[], int inc_MilesTraveled, int inc_totalMiles, int inc_currentMilestone, int num_MS)
+Travel::Travel(Milestone inc_MS[32], int inc_MilesTraveled, int inc_totalMiles, int inc_currentMilestone, int num_MS)
 {
     for(int i = 0; i < num_MS; i++)
     {
-        allMilestones[i] = inc_MS[i];
+        allMilestones[i].setCurrentMilestone(inc_MS[i].getCurrentMilestone());
     }
 
     milesTraveled = inc_MilesTraveled;
@@ -26,6 +27,7 @@ Travel::Travel(Milestone inc_MS[], int inc_MilesTraveled, int inc_totalMiles, in
     currentMilestone = inc_currentMilestone;
 }
 
+//getters
 int Travel::getMilesTraveled() const
 {
     return milesTraveled;
@@ -36,6 +38,12 @@ int Travel::getTripLength() const
     return totalMiles;
 }
 
+Milestone Travel::getMilestone(int index)
+{
+    return allMilestones[index];
+}
+
+//setters
 void Travel::setMilesTraveled(int inc_MilesTraveled)
 {
     milesTraveled = inc_MilesTraveled;

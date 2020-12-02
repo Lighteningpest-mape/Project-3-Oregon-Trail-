@@ -56,17 +56,7 @@ void Party::setNumPartyMembers(int inc_numPartyMembers)
     numPartyMembers = inc_numPartyMembers;
 }
 
-void Party::removeMember(int removeNumber)
+void Party::removeMember()
 {
     numPartyMembers--;
-    //Loops replacing the removed member with the members after in the array
-    for(int i = removeNumber; i < partyNames.length(); i++)
-    {
-        if(i + 1 < partyNames.length())
-        {
-            partyNames[i] = partyNames[i + 1];
-        }
-    }
-    //Clears the last name to represent the loss
-    partyNames[4] = "";
 }

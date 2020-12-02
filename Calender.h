@@ -17,6 +17,7 @@ class Calender
 
     //other functions
     int monthCheck();
+    void timeAdvance(int);
 
     private:
     int initDay;

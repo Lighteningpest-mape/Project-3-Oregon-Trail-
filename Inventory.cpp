@@ -21,16 +21,16 @@ Inventory::Inventory()
    cash = 0.0;
    oxen = 0;
    spareParts = 0;
-   travelSpeed = 0;
+   numMedKits = 0;
 }
-Inventory::Inventory(int food, int bullets, double money, int ox, int parts, int speed)
+Inventory::Inventory(int food, int bullets, double money, int ox, int parts, int speed, int inc_numMedKits)
 {
     poundsFood = food;
     numBullets = bullets;
     cash = money;
     oxen = ox;
     spareParts = parts;
-    travelSpeed = speed;
+    numMedKits = inc_numMedKits;
 }
 
 //getters
@@ -54,10 +54,11 @@ int Inventory::getSpareParts() const
 {
     return spareParts;
 }
-int Inventory::getTravelSpeed() const
+int Inventory::getMedKits() const
 {
-    return travelSpeed;
+    return numMedKits;
 }
+
 
 //setters
 void Inventory::setFood(int food)
@@ -80,7 +81,7 @@ void Inventory::setSpareParts(int parts)
 {
     spareParts = parts;
 }
-void Inventory::setTravelSpeed(int speed)
+void Inventory::setMedKits(int meds)
 {
-    travelSpeed = speed;
+    numMedKits = meds;
 }

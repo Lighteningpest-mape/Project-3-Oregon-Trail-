@@ -13,7 +13,7 @@ class Inventory
     double getCash() const;
     int getOxen() const;
     int getSpareParts() const;
-    int getTravelSpeed() const;
+    int getMedKits() const;
 
     //setters
     void setFood(int);
@@ -21,13 +21,13 @@ class Inventory
     void setCash(double);
     void setOxen(int);
     void setSpareParts(int);
-    void setTravelSpeed(int);
+    void setMedKits(int);
 
     private:
     int poundsFood;
+    int numMedKits;
     int numBullets;
     double cash;
     int oxen;
     int spareParts;
-    int travelSpeed;
 };

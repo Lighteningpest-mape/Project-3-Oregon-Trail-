@@ -31,8 +31,8 @@ class Game
     void banditEvent();
     void randEvent(int);
     void restEvent();
-    void turnMenu();
-    void puzzleSolve();
+    bool turnMenu();
+    bool puzzleSolve();
 
     private:
     Travel tripLength;

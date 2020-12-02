@@ -1,0 +1,32 @@
+Kansas River Crossing
+102
+Big Blue River Crossing
+185
+Fort Kearney
+304
+Chimney Rock
+554
+Fort Laramie
+640
+Independence Rock
+830
+South Pass
+932
+Fort Bridger
+989
+Green River Crossing
+1151
+Soda Springs
+1295
+Fort Hall
+1395
+Snake River Crossing
+1534
+Fort Boise
+1648
+Blue Mountains
+1808
+Fort Walla Walla
+1863
+Oregon City
+2040
